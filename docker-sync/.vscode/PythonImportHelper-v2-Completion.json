@@ -1,0 +1,263 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "env.bin.activate_this",
+        "description": "env.bin.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir] + os.environ.get(\"PATH\", \"\").split(os.pathsep))\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)",
+        "detail": "env.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "env.bin.activate_this",
+        "description": "env.bin.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir] + os.environ.get(\"PATH\", \"\").split(os.pathsep))\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]",
+        "detail": "env.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "env.bin.activate_this",
+        "description": "env.bin.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir] + os.environ.get(\"PATH\", \"\").split(os.pathsep))\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "env.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "env.bin.activate_this",
+        "description": "env.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "env.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "env.bin.activate_this",
+        "description": "env.bin.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "env.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "env.bin.activate_this",
+        "description": "env.bin.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "env.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "env.bin.activate_this",
+        "description": "env.bin.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "env.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "env.bin.activate_this",
+        "description": "env.bin.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "env.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sh",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def sh(cmd: str, echo: bool = False) -> str:\n    if echo:\n        logging.info(cmd)\n    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)\n    p.wait()\n    return p.stdout.read().decode()\ndef get_last_commit_sha() -> str:\n    headers = {\"Authorization\": f\"Bearer {GIT_TOKEN}\"}\n    url = f\"https://api.github.com/repos/{GIT_USER}/{GIT_REPO_NAME}/commits\"\n    return requests.get(url, headers=headers).json()[0][\"sha\"]",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_last_commit_sha",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_last_commit_sha() -> str:\n    headers = {\"Authorization\": f\"Bearer {GIT_TOKEN}\"}\n    url = f\"https://api.github.com/repos/{GIT_USER}/{GIT_REPO_NAME}/commits\"\n    return requests.get(url, headers=headers).json()[0][\"sha\"]\ndef clone_repository(\n    repo: str, user: str, password: str, branch: str, path: str\n) -> str:\n    git_repo_url_full = f\"https://{user}:{password}@github.com/{user}/{repo}.git\"\n    sh(f\"rm -fr {GIT_CLONE_PATH}\")\n    sh(f\"git clone -c http.sslVerify=false -b {branch} {git_repo_url_full} {path}\")",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "clone_repository",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def clone_repository(\n    repo: str, user: str, password: str, branch: str, path: str\n) -> str:\n    git_repo_url_full = f\"https://{user}:{password}@github.com/{user}/{repo}.git\"\n    sh(f\"rm -fr {GIT_CLONE_PATH}\")\n    sh(f\"git clone -c http.sslVerify=false -b {branch} {git_repo_url_full} {path}\")\ndef get_docker_compose_paths_list(base_path: str) -> list[str]:\n    result = []\n    for dirpath, _, files in os.walk(base_path):\n        result.extend(",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_docker_compose_paths_list",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_docker_compose_paths_list(base_path: str) -> list[str]:\n    result = []\n    for dirpath, _, files in os.walk(base_path):\n        result.extend(\n            [\n                f\"{dirpath}/{file}\"\n                for file in files\n                if file.endswith(\".yaml\") or file.endswith(\".yml\")\n            ]\n        )",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "down_docker_compose",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def down_docker_compose(path: str):\n    compose_paths_files = get_docker_compose_paths_list(path)\n    for compose_path_file in compose_paths_files:\n        compose_name = compose_path_file.split(\"/\")[-2]\n        sh(\n            f\"cd {os.path.join(path, compose_name)} && docker compose down --remove-orphans\"\n        )\ndef up_docker_compose(path: str):\n    compose_paths_files = get_docker_compose_paths_list(path)\n    for compose_path_file in compose_paths_files:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "up_docker_compose",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def up_docker_compose(path: str):\n    compose_paths_files = get_docker_compose_paths_list(path)\n    for compose_path_file in compose_paths_files:\n        compose_name = compose_path_file.split(\"/\")[-2]\n        logging.info(\"------------------------------------------------\")\n        logging.info(f\">> {compose_name} <<\")\n        logging.info(f\"File: {compose_path_file}\")\n        logging.info(\"------------------------------------------------\")\n        sh(\n            f\"cd {os.path.join(path, compose_name)} && docker compose pull && docker compose up -d\"",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "GIT_CLONE_PATH",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "GIT_CLONE_PATH = os.environ[\"GIT_CLONE_PATH\"]\nGIT_USER = os.environ[\"GIT_USER\"]\nGIT_TOKEN = os.environ[\"GIT_TOKEN\"]\nGIT_REPO_NAME = os.environ[\"GIT_REPO_NAME\"]\nGIT_BRANCH = os.environ[\"GIT_BRANCH\"]\nTIME_SECONDS_CHECK = float(os.environ[\"TIME_SECONDS_CHECK\"])\nLAST_COMMIT_SHA = None\nTIME_SECONDS_WAIT_UP_DOCKERS = 5\n# ================================================\n# METHODS",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "GIT_USER",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "GIT_USER = os.environ[\"GIT_USER\"]\nGIT_TOKEN = os.environ[\"GIT_TOKEN\"]\nGIT_REPO_NAME = os.environ[\"GIT_REPO_NAME\"]\nGIT_BRANCH = os.environ[\"GIT_BRANCH\"]\nTIME_SECONDS_CHECK = float(os.environ[\"TIME_SECONDS_CHECK\"])\nLAST_COMMIT_SHA = None\nTIME_SECONDS_WAIT_UP_DOCKERS = 5\n# ================================================\n# METHODS\n# ================================================",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "GIT_TOKEN",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "GIT_TOKEN = os.environ[\"GIT_TOKEN\"]\nGIT_REPO_NAME = os.environ[\"GIT_REPO_NAME\"]\nGIT_BRANCH = os.environ[\"GIT_BRANCH\"]\nTIME_SECONDS_CHECK = float(os.environ[\"TIME_SECONDS_CHECK\"])\nLAST_COMMIT_SHA = None\nTIME_SECONDS_WAIT_UP_DOCKERS = 5\n# ================================================\n# METHODS\n# ================================================\ndef sh(cmd: str, echo: bool = False) -> str:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "GIT_REPO_NAME",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "GIT_REPO_NAME = os.environ[\"GIT_REPO_NAME\"]\nGIT_BRANCH = os.environ[\"GIT_BRANCH\"]\nTIME_SECONDS_CHECK = float(os.environ[\"TIME_SECONDS_CHECK\"])\nLAST_COMMIT_SHA = None\nTIME_SECONDS_WAIT_UP_DOCKERS = 5\n# ================================================\n# METHODS\n# ================================================\ndef sh(cmd: str, echo: bool = False) -> str:\n    if echo:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "GIT_BRANCH",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "GIT_BRANCH = os.environ[\"GIT_BRANCH\"]\nTIME_SECONDS_CHECK = float(os.environ[\"TIME_SECONDS_CHECK\"])\nLAST_COMMIT_SHA = None\nTIME_SECONDS_WAIT_UP_DOCKERS = 5\n# ================================================\n# METHODS\n# ================================================\ndef sh(cmd: str, echo: bool = False) -> str:\n    if echo:\n        logging.info(cmd)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_SECONDS_CHECK",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "TIME_SECONDS_CHECK = float(os.environ[\"TIME_SECONDS_CHECK\"])\nLAST_COMMIT_SHA = None\nTIME_SECONDS_WAIT_UP_DOCKERS = 5\n# ================================================\n# METHODS\n# ================================================\ndef sh(cmd: str, echo: bool = False) -> str:\n    if echo:\n        logging.info(cmd)\n    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "LAST_COMMIT_SHA",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "LAST_COMMIT_SHA = None\nTIME_SECONDS_WAIT_UP_DOCKERS = 5\n# ================================================\n# METHODS\n# ================================================\ndef sh(cmd: str, echo: bool = False) -> str:\n    if echo:\n        logging.info(cmd)\n    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)\n    p.wait()",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_SECONDS_WAIT_UP_DOCKERS",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "TIME_SECONDS_WAIT_UP_DOCKERS = 5\n# ================================================\n# METHODS\n# ================================================\ndef sh(cmd: str, echo: bool = False) -> str:\n    if echo:\n        logging.info(cmd)\n    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)\n    p.wait()\n    return p.stdout.read().decode()",
+        "detail": "app",
+        "documentation": {}
+    }
+]
