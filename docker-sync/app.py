@@ -85,6 +85,7 @@ def down_docker_compose(path: str):
 
         compose_name = compose_path_file.split("/")[-2]
 
+        logging.info(f"Down compose {compose_name}")
         sh(
             f"cd {os.path.join(path, compose_name)} && docker compose down --remove-orphans"
         )
