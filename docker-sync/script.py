@@ -119,7 +119,7 @@ git_commit_sha = get_last_git_commit_sha()
 if local_commit_sha != git_commit_sha:
 
     if os.path.exists(GIT_CLONE_PATH):
-        down_docker_compose(GIT_CLONE_PATH)
+        down_docker_compose()
         time.sleep(TIME_SECONDS_WAIT_UP_DOCKERS)
 
     clone_repository()
