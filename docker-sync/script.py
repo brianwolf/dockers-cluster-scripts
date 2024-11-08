@@ -99,7 +99,7 @@ def up_docker_compose():
         logging.info("------------------------------------------------")
 
         sh(
-            f"cd {os.path.join(GIT_CLONE_PATH, compose_name)} && docker compose pull && docker compose up -d"
+            f"cd {os.path.join(GIT_CLONE_PATH, compose_name)} && docker compose down --remove-orphans && docker compose pull && docker compose up -d"
         )
 
 
