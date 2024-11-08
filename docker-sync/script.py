@@ -16,8 +16,9 @@ GIT_USER = "brianwolf"
 GIT_TOKEN = os.environ["GIT_TOKEN"]
 
 TIME_SECONDS_WAIT_UP_DOCKERS = 5
-GIT_CLONE_PATH = "/tmp/docker-sync/repo"
-GIT_COMMIT_SHA_PATH = "/tmp/docker-sync/commit-sha.txt"
+WORKINDIR = "/tmp/docker-sync"
+GIT_CLONE_PATH = f"{WORKINDIR}/repo"
+GIT_COMMIT_SHA_PATH = f"{WORKINDIR}/commit-sha.txt"
 
 # ================================================
 # CONFIGS
