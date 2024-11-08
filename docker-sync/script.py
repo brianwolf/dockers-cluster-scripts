@@ -71,7 +71,7 @@ def get_docker_compose_paths_list() -> list[str]:
     return [
         f"{GIT_CLONE_PATH}/{d}/docker-compose.yaml"
         for d in os.listdir(GIT_CLONE_PATH)
-        if d not in [".git", "img"]
+        if d not in [".git", "img", "README.md"]
     ]
 
 
