@@ -1,9 +1,23 @@
 import logging
 import os
 import subprocess
+import sys
 import time
 
 import requests
+
+# ================================================
+# VARS
+# ================================================
+
+GIT_REPO_URL = "https://github.com/brianwolf/dockers-cluster.git"
+GIT_REPO_BRANCH = "main"
+GIT_USER = "brianwolf"
+GIT_TOKEN = os.environ["GIT_TOKEN"]
+
+TIME_SECONDS_WAIT_UP_DOCKERS = 5
+GIT_CLONE_PATH = "/tmp/docker-sync/repo"
+GIT_COMMIT_SHA_PATH = "/tmp/docker-sync/commit-sha.txt"
 
 # ================================================
 # CONFIGS
@@ -12,20 +26,8 @@ import requests
 logging.basicConfig(
     format="%(asctime)s - %(name)s (%(process)d) - %(levelname)s - %(message)s",
     level=logging.INFO,
+    stream=sys.stdout,
 )
-
-# ================================================
-# VARS
-# ================================================
-
-GIT_REPO_URL = os.environ["GIT_REPO_URL"]
-GIT_REPO_BRANCH = os.environ["GIT_BRANCH"]
-GIT_USER = os.environ["GIT_USER"]
-GIT_TOKEN = os.environ["GIT_TOKEN"]
-
-TIME_SECONDS_WAIT_UP_DOCKERS = 5
-GIT_CLONE_PATH = "/tmp/docker-sync/repo"
-GIT_COMMIT_SHA_PATH = "/tmp/docker-sync/commit-sha.txt"
 
 # ================================================
 # METHODS

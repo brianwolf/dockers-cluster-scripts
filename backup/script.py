@@ -2,6 +2,7 @@
 
 import logging
 import os
+import sys
 from datetime import datetime
 
 # ================================================
@@ -19,6 +20,7 @@ MAX_BACKUPS = 3
 logging.basicConfig(
     format="%(asctime)s - %(name)s (%(process)d) - %(levelname)s - %(message)s",
     level=logging.INFO,
+    stream=sys.stdout,
 )
 
 # ================================================

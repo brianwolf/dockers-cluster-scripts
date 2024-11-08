@@ -29,6 +29,6 @@ Repositorio con scripts usados en el cluster de la minipc
     Agregar lo siguiente:
 
     ```bash
-    * * * * * python3 /home/brian/Workspace/dockers-cluster-scripts/docker-sync/script.py
-    0 4 * * * python3 /home/brian/Workspace/dockers-cluster-scripts/backup/script.py
+    * * * * * python3 /home/brian/Workspace/dockers-cluster-scripts/docker-sync/script.py > /tmp/docker-sync.log
+    0 4 * * * python3 /home/brian/Workspace/dockers-cluster-scripts/backup/script.py > /tmp/backup.log
     ```
