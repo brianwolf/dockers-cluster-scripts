@@ -11,7 +11,7 @@ from datetime import datetime
 
 BACKUP_PATH = "/media/sda/volumes/filebrowser/"
 DEST_BACKUPS_PATH = "/home/brian/backups/"
-MAX_BACKUPS = 3
+MAX_BACKUPS = 1
 
 # ================================================
 # CONFIGS
