@@ -113,7 +113,9 @@ if not os.path.exists(WORKINDIR):
 if not os.path.exists(GIT_COMMIT_SHA_PATH):
     sh(f"touch {GIT_COMMIT_SHA_PATH}")
 
-local_commit_sha = open(GIT_COMMIT_SHA_PATH, 'r').read()
+with open(GIT_COMMIT_SHA_PATH, 'r') as f:
+    local_commit_sha = f.read()
+
 git_commit_sha = get_last_git_commit_sha()
 
 if local_commit_sha != git_commit_sha:
@@ -125,4 +127,5 @@ if local_commit_sha != git_commit_sha:
     clone_repository()
     up_docker_compose()
 
-    open(GIT_COMMIT_SHA_PATH, 'w').write(git_commit_sha)
+    with open(GIT_COMMIT_SHA_PATH, 'w') as f:
+        f.write(git_commit_sha)
