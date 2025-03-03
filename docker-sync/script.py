@@ -110,11 +110,10 @@ def up_docker_compose():
 if not os.path.exists(WORKINDIR):
     sh(f"mkdir -p {WORKINDIR}")
 
-if not os.path.exists(GIT_COMMIT_SHA_PATH):
-    sh(f"touch {GIT_COMMIT_SHA_PATH}")
-
-with open(GIT_COMMIT_SHA_PATH, 'r') as f:
-    local_commit_sha = f.read()
+local_commit_sha = None
+if os.path.exists(GIT_COMMIT_SHA_PATH):
+    with open(GIT_COMMIT_SHA_PATH, 'r') as f:
+        local_commit_sha = f.read()
 
 git_commit_sha = get_last_git_commit_sha()
 
