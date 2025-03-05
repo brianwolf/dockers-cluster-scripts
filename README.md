@@ -23,12 +23,12 @@ Repositorio con scripts usados en el cluster de la minipc
     Ejecutar:
 
     ```bash
-    crontab -e
+    sudo vim /etc/crontab
     ```
 
     Agregar lo siguiente:
 
     ```bash
-    * * * * * python3 /home/brian/Workspace/dockers-cluster-scripts/docker-sync/script.py > /tmp/docker-sync.log 2>&1
-    0 4 * * * python3 /home/brian/Workspace/dockers-cluster-scripts/backup/script.py > /tmp/backup.log 2>&1
+    * * * * * brian python3 /home/brian/Workspace/dockers-cluster-scripts/docker-sync/script.py > /tmp/docker-sync.log 2>&1
+    0 4 * * * brian python3 /home/brian/Workspace/dockers-cluster-scripts/backup/script.py > /tmp/backup.log 2>&1
     ```
