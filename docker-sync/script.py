@@ -108,7 +108,7 @@ def up_docker_compose():
 # ================================================
 
 if not os.path.exists(WORKINDIR):
-    sh(f"mkdir -p {WORKINDIR}")
+    sh(f"mkdir -p -m 777 {WORKINDIR}")
 
 local_commit_sha = None
 if os.path.exists(GIT_COMMIT_SHA_PATH):
