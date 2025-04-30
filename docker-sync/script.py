@@ -3,6 +3,7 @@ import os
 import subprocess
 import sys
 import time
+from pathlib import Path
 
 import requests
 
@@ -16,7 +17,7 @@ GIT_USER = "brianwolf"
 GIT_TOKEN = os.environ["GIT_TOKEN"]
 
 TIME_SECONDS_WAIT_UP_DOCKERS = 5
-WORKINDIR = "/tmp/docker-sync"
+WORKINDIR = os.path.join(Path.home(), "docker-sync")
 GIT_CLONE_PATH = f"{WORKINDIR}/repo"
 GIT_COMMIT_SHA_PATH = f"{WORKINDIR}/commit-sha.txt"
 
@@ -107,10 +108,10 @@ def up_docker_compose():
 # SCRIPT
 # ================================================
 
-if not os.path.exists(WORKINDIR):
-    sh(f"mkdir -p -m 777 {WORKINDIR}")
+os.makedirs(WORKINDIR, exist_ok=True)
 
 local_commit_sha = None
+
 if os.path.exists(GIT_COMMIT_SHA_PATH):
     with open(GIT_COMMIT_SHA_PATH, 'r') as f:
         local_commit_sha = f.read()
