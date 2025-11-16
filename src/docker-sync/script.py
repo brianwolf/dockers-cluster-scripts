@@ -43,12 +43,17 @@ def sh(cmd: str, echo: bool = False) -> str:
 
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
     p.wait()
-    return p.stdout.read().decode()
+    return p.stdout.read().decode()  # type: ignore
 
 
 def get_repo_name() -> str:
 
-    return GIT_REPO_URL.replace('https://', '').replace('http://', '').split('/')[2].replace('.git', '')
+    return (
+        GIT_REPO_URL.replace("https://", "")
+        .replace("http://", "")
+        .split("/")[2]
+        .replace(".git", "")
+    )
 
 
 def get_last_git_commit_sha() -> str:
@@ -59,12 +64,14 @@ def get_last_git_commit_sha() -> str:
     return requests.get(url, headers=headers).json()[0]["sha"]
 
 
-def clone_repository() -> str:
+def clone_repository():
 
     git_repo_url_full = f"https://{GIT_USER}:{GIT_TOKEN}@{GIT_REPO_URL.replace('https://', '').replace('http://', '')}"
 
     sh(f"rm -fr {GIT_CLONE_PATH}")
-    sh(f"git clone -c http.sslVerify=false -b {GIT_REPO_BRANCH} {git_repo_url_full} {GIT_CLONE_PATH}")
+    sh(
+        f"git clone -c http.sslVerify=false -b {GIT_REPO_BRANCH} {git_repo_url_full} {GIT_CLONE_PATH}"
+    )
 
 
 def get_docker_compose_paths_list() -> list[str]:
@@ -113,7 +120,7 @@ os.makedirs(WORKINDIR, exist_ok=True)
 local_commit_sha = None
 
 if os.path.exists(GIT_COMMIT_SHA_PATH):
-    with open(GIT_COMMIT_SHA_PATH, 'r') as f:
+    with open(GIT_COMMIT_SHA_PATH, "r") as f:
         local_commit_sha = f.read()
 
 git_commit_sha = get_last_git_commit_sha()
@@ -127,5 +134,5 @@ if local_commit_sha != git_commit_sha:
     clone_repository()
     up_docker_compose()
 
-    with open(GIT_COMMIT_SHA_PATH, 'w') as f:
+    with open(GIT_COMMIT_SHA_PATH, "w") as f:
         f.write(git_commit_sha)

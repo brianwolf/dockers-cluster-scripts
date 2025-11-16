@@ -2,7 +2,7 @@
 
 Repositorio con scripts usados en el cluster de la minipc
 
-![alt](img/ee317c5b-3ec4-473f-a7bd-4fa987c846d3-37eb6732dfac.small.jpeg)
+![alt](img/linux.jpeg)
 
 ## Instalacion
 
@@ -29,6 +29,6 @@ Repositorio con scripts usados en el cluster de la minipc
     Agregar lo siguiente:
 
     ```bash
-    * * * * * brian python3 /home/brian/Workspace/dockers-cluster-scripts/docker-sync/script.py > /tmp/docker-sync.log 2>&1
-    0 4 * * * brian python3 /home/brian/Workspace/dockers-cluster-scripts/backup/script.py > /tmp/backup.log 2>&1
+    * * * * * brian python3 <repo_path>/src/docker-sync/script.py > /tmp/docker-sync.log 2>&1
+    0 4 * * * brian python3 <repo_path>/src/backup/script.py > /tmp/backup.log 2>&1
     ```
