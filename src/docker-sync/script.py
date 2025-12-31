@@ -101,6 +101,9 @@ def up_docker_compose():
 
         compose_name = compose_path_file.split("/")[-2]
 
+        if compose_name != "docker-compose.yaml":
+            continue
+
         logging.info("------------------------------------------------")
         logging.info(f">> {compose_name} <<")
         logging.info(f"File: {compose_path_file}")
